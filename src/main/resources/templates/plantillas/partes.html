@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xlmns = "http://www.w3.org/1999/xhtml"
+      xmlns:th = "http://www.thymeleaf.org">
+    <head>
+        <title>EJEMPLO DE APP WEB MVC CON SPRING BOOT/title>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            </head>
+            <body>
+                <header th:fragment = "cabecero">
+                    <h1 th:text ="#{plantilla.titulo}">El titulo</h1>
+                </header>
+
+                <footer th:fragment="pie">
+                    <span th:text ="#{plantilla.pie}">El pie</span>
+                    <p><a href="https://www.instagram.com/jamiravilez09/">
+                            Instagram
+                        </a>
+                    </p>
+                </footer>
+
+            </body>
+</html>

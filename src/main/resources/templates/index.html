@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header th:replace="plantillas/partes :: cabecero"></header>
+        <h2>PAGINA DE INICIO HECHA POR JAMIR</h2>
+        <a th:href = "@{/agregar}">AGREGAR USUARIO</a>
+        <hr> 
+        <div th:if = "${usuarios!= null and !usuarios.empty}">
+            <table border ="1">
+                <tr>
+                    <th>Cedula</th>
+                    <th>Clave</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Editar</th>
+                    <th>Elimiar</th>
+                </tr>
+                <tr th:each = "u: ${usuarios}">
+                    <td th:text = "${u.cedula}"></td>
+                    <td th:text = "${u.clave}"></td>
+                    <td th:text = "${u.nombre}"></td>
+                    <td th:text = "${u.email}"></td>
+                    <td><a th:href = "@{/editar/}+${u.cedula}" th:text="EDITAR"></a></td>
+                    <td><a th:href = "@{/eliminar/}+${u.cedula}" th:text="ELIMINAR"></a></td>
+                </tr>
+            </table>
+        </div>
+        <div th:if = "${usuarios == null or usuarios.empty}">
+            La lista de Usuarios esta vacia
+        </div> <br/><hr>
+        <footer th:replace = "plantillas/partes ::pie"></footer>
+
+    </body>
+</html>
